@@ -9,3 +9,8 @@
 5. Let me know or submit an issue in the action bar for any problem you notice.
 6. Venmo me @anhphan2705 anything as a donation :D
 7. Ez 100%
+
+#### Note ####
+
+1. This is a private repo. No one can see it unless they are invited.
+2. Ask @anhphan2705 if you want to contribute or for someone else to view this repo
