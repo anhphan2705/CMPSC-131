@@ -7,6 +7,8 @@ divisible = []
 not_divisible = []
 divisible_index = []
 not_divisible_index = []
+
+#Initialize result list
 result = [None] * len(number_list)
 
 #Adding values into appropriate list
@@ -26,12 +28,12 @@ not_divisible.sort()
 div_pos = 0
 not_div_pos = 0
 for pos in range(0, len(number_list)):
-    for index1 in divisible_index:
-        if (pos == index1):
+    for index in divisible_index:
+        if (pos == index):
             result[pos] = divisible[div_pos]
             div_pos += 1
-    for index2 in not_divisible_index:
-        if (pos == index2):
+    for index in not_divisible_index:
+        if (pos == index):
             result[pos] = not_divisible[not_div_pos]
             not_div_pos += 1
 
