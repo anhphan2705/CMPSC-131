@@ -18,12 +18,12 @@ def add_txt(directory, text):
     with open(directory, "a") as file:
         file.write(text + "\n")
 
-#Main
+# Main
 def main():
     text = read_txt('info.txt')
     ssn_list = ssn_search(text)
     for ssn in ssn_list:
         add_txt('ssn.txt', ssn)
 
-#Run
+# Run
 main()
