@@ -1,5 +1,5 @@
-file = open("PSU\\CMPSC 131\\Test\\4. Week of Nov 15th\\info.txt")
-file2 = open("PSU\\CMPSC 131\\Test\\4. Week of Nov 15th\\sales.txt")
+file = open("info.txt")
+file2 = open("sales.txt")
 lst1 = []
 lst2 = []
 
