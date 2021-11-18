@@ -1,3 +1,4 @@
+#Main
 def read_line_text(directory):
     
     with open(directory) as file:
@@ -14,7 +15,7 @@ def name_id_locator(textLines):
     
     return name_list, id_list
 
-def sale_by_month(sale_info_lines, month, id_list):
+def sale_by_month(sale_info_lines, year, id_list):
     
     sales = [0.0] * len(id_list)
     
@@ -24,9 +25,12 @@ def sale_by_month(sale_info_lines, month, id_list):
         id_comma_index = line.find(",", 0, 5)
         month_comma_index = line.find(",", 5)
         month_slash_index = line.find("/")
-        line_month = int(line[(month_comma_index+1) : month_slash_index])
+        # line_month = int(line[(month_comma_index+1) : month_slash_index]) #This is for if yours find best by month
+        year_slash_index = line.find("/", month_slash_index+1) #Best by year
+        line_year = int(line[(year_slash_index+1):].replace("\n", "")) #Best by year
         
-        if (line_month == month):
+        #if (line_month == month):
+        if (line_year == year):
             sale = float(line[(id_comma_index + 1):(month_comma_index)])
             sales[id_index] = sales[id_index] + sale
             
@@ -45,15 +49,15 @@ def best_sale_id_locator(sale):
 
 def main():
     
-    month = int(input("Please enter the desired month: "))
-    employee_info_lines = read_line_text("PSU\\CMPSC 131\\Test\\4. Week of Nov 15th\\info.txt")
-    sale_info_lines = read_line_text("PSU\\CMPSC 131\\Test\\4. Week of Nov 15th\\sales.txt")
+    year = int(input("Please enter the desired year: "))
+    employee_info_lines = read_line_text("info.txt")
+    sale_info_lines = read_line_text("sales.txt")
     
     names, ids = name_id_locator(employee_info_lines)
-    sales_list = sale_by_month(sale_info_lines, month, ids)
+    sales_list = sale_by_month(sale_info_lines, year, ids)
     best_sale_id = best_sale_id_locator(sales_list)
     best_sale_name = names[best_sale_id]
-    print("The highest sales for month", month, "was made by", best_sale_name)
+    print("The highest sales for month", year, "was made by", best_sale_name)
     
 main()
     
