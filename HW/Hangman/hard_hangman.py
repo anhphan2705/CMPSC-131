@@ -183,7 +183,7 @@ def main():
     is_complete = guess_complete(guess_word)
     
     while ((not is_complete) and (guess_times > 0)):
-        letter = input(f"Please guess a letter for the word ({guess_chances} guesses left): {guess_word}\nGuess: ")
+        letter = input(f"Please guess a letter for the word ({guess_times} guesses left): {guess_word}\nGuess: ")
         possible_match, no_match = match_no_match(letter, words)
         words, is_match = choosing_word(guess_list, possible_match, no_match)
         if is_match:
